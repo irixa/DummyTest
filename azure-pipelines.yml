@@ -1,4 +1,11 @@
 # Starter pipeline
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\DummyDataLibrary.Test.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
